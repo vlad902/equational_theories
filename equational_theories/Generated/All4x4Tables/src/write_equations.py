@@ -137,7 +137,7 @@ def process_equation_line(line, equation_index):
     rhs_c_code = generate_c_code(rhs_expr, variable_indices)
     # Generate c code for function
     nvar = len(variables)
-    func_code = f"bool fn{equation_index}(int* table, uint64_t arg) {{ return {lhs_c_code} == {rhs_c_code}; }} int nvar_{equation_index} = {nvar};"
+    func_code = f"bool fn{equation_index}(int* table, uint64_t arg) {{ return {lhs_c_code} == {rhs_c_code}; }}\n#define nvar_{equation_index} {nvar}"
     return func_code
 
 
