@@ -181,3 +181,20 @@ for idx, line in enumerate(open("equations.txt")):
         print(func_code)
     else:
         print(f"Failed to process equation at line {idx}: {line}")
+
+print("""
+void setup() {
+    functions = (FunctionPtr*)malloc(NUM_FUNCTIONS * sizeof(FunctionPtr));
+    nvar_list = (int*)malloc(NUM_FUNCTIONS * sizeof(int));
+
+    if (!functions || !nvar_list) {
+        fprintf(stderr, "Memory allocation failed\\n");
+        return;
+    }
+""")
+
+for idx, line in enumerate(open("equations.txt")):
+    print(f"    functions[{idx}] = fn{idx};")
+    print(f"    nvar_list[{idx}] = nvar_{idx};")
+
+print("}")
