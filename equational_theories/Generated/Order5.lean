@@ -19,3 +19,4 @@ import equational_theories.Generated.Order5.Eq2Proof18
 import equational_theories.Generated.Order5.Eq2Proof19
 import equational_theories.Generated.Order5.Eq2Proof20
 import equational_theories.Generated.Order5.FiniteImplications
+import equational_theories.Generated.Order5.MiscImplications
